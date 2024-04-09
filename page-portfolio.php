@@ -3,12 +3,9 @@
 get_header();
  ?>
 
-		<section class="introducao-interna interna_portfolio">
-			<div class="container">
-				<h1>Portfólio</h1>
-				<p>conheça os projetos que amamos mostrar</p>
-			</div>
-		</section>
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+<?php include(TEMPLATEPATH . "/inc/introducao.php"); ?>
 
 		<section class="container animar-interno">
 			<ul class="rslides">
@@ -37,29 +34,17 @@ get_header();
 
 		<section class="portfolio">
 			<div class="container">
-				<ul class="portfolio_lista rslides_portfolio">
-
-					<li>
-						<div class="grid-8"><img src="img/portfolio/retro.jpg" alt="Bicicleta Retrô"></div>
-						<div class="grid-8"><img src="img/portfolio/passeio.jpg" alt="Bicicleta Passeio"></div>
-						<div class="grid-16"><img src="img/portfolio/esporte.jpg" alt="Bicicleta Esporte"></div>
-					</li>
-
-					<li>
-						<div class="grid-8"><img src="img/portfolio/passeio.jpg" alt="Bicicleta Passeio"></div>
-						<div class="grid-8"><img src="img/portfolio/retro.jpg" alt="Bicicleta Retrô"></div>
-						<div class="grid-16"><img src="img/portfolio/esporte.jpg" alt="Bicicleta Esporte"></div>
-					</li>
-
-				</ul>
+			<?php include(TEMPLATEPATH . "/inc/clientes-portfolio.php"); ?>
 			</div>
 		</section>
-
+		
 		<div class="quebra">
 			<blockquote class="quote-externo container">
 				<p>“o verdadeiro segredo da felicidade está em ter um genuíno interesse por todos os detalhes da vida cotidiana.”</p>
 				<cite>WILLIAM MORRIS</cite>
 			</blockquote>
 		</div>
+
+		<?php endwhile; else: endif; ?>
 
 		<?php get_footer(); ?>
