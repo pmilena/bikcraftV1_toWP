@@ -1,7 +1,7 @@
 <?php
 
 // Função para registrar os Scripts e o CSS
-function origamid_scripts() {
+function bikcraft_scripts() {
 	// Desregistra o jQuery do Wordpress
 	wp_deregister_script('jquery');
 
@@ -21,13 +21,13 @@ function origamid_scripts() {
 	wp_enqueue_script( 'modernizr' );
 	wp_enqueue_script( 'main-script' );	
 }
-add_action( 'wp_enqueue_scripts', 'origamid_scripts' );
+add_action( 'wp_enqueue_scripts', 'bikcraft_scripts' );
 
-function origamid_css() {
-	wp_register_style( 'origamid-style', get_template_directory_uri() . '/style.css', array(), false, false );
-	wp_enqueue_style( 'origamid-style' );
+function bikcraft_css() {
+	wp_register_style( 'bikcraft-style', get_template_directory_uri() . '/style.css', array(), false, false );
+	wp_enqueue_style( 'bikcraft-style' );
 }
-add_action( 'wp_enqueue_scripts', 'origamid_css' );
+add_action( 'wp_enqueue_scripts', 'bikcraft_css' );
 // Habilitar Menus
 add_theme_support('menus');
 
